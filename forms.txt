@@ -1,0 +1,97 @@
+<?php
+    include_once('./header.php');
+?>
+
+    <div class="right">
+
+
+
+
+    <div class="container">
+    <form>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label>First name</label>
+      <input type="text" name="" class="form-control" placeholder="First name"required>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label>Last name</label>
+      <input type="text" name="" class="form-control" placeholder="Last name" required>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label>Email</label>
+      <input type="text" name="" class="form-control" placeholder="Email" required>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label>Phone Number</label>
+      <input type="text" name="PhoneNo" class="form-control" placeholder="Phone Number" required>
+    </div>
+  </div>
+
+  
+
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label>Choose Image</label>
+      <input type="file" name="ImageUrl" class="form-control" required>
+    </div>
+    <div class="col-md-4 mb-3">
+        <label>Select Date</label>
+        <input type="date" name="Date" class="form-control"/>
+    </div>
+     
+    <div class="col-md-2 mb-3">
+      <label class="label-control">Gender</label>
+      <br>
+      <input type="radio" name="Gender" value="Male" checked required>Male
+      <input type="radio" name="Gender" value="Female" required>Female
+    </div>
+  </div>
+  <input name="submit" class="btn btn-primary" type="submit" value="Add"/>
+</form>
+    </div>
+
+
+
+
+
+
+
+    <?php
+        include_once('./footer.php');
+    ?> 
+    </div>
+</body>
+</html>
+
+
+<?php
+                    while($jobs = mysqli_fetch_assoc($queryRes)){ 
+                        if($jobs['ActiveStatus'] == true){?>
+                            <div class="card" style="padding: 15px">
+                                <div class="car-body">
+                                    <h4 class="card-title"><?php echo $jobs['Title'] ?></h5>
+                                    <h5 class="text-muteed"><?php echo $jobs['CompanyName'] ?></h5>
+                                    <p class="card-text"><?php echo $jobs['Address'] ?></p>
+                                    <h6 class="text-"><?php echo $jobs['Deadline'] ?></h6>
+                                    <a class="card-link" href="#">Edit</a>
+                                </div>
+                            </div>
+                <?php
+                    }
+                }
+                ?>
+
+
+
+
+
+
+
+
+
+
+                

@@ -1,0 +1,12 @@
+<li class="badge badge-info notifications">Notifications
+                    <ul class="nv-drop">
+                        <?php
+                            while($seeker = mysqli_fetch_assoc($eligibledSeeker)){
+                                $eligibledJobDetails = $gateway->getPostedJobById($seeker['JobId']);?>
+                                
+                                <li><a href="./job-details.php?id=<?php echo $eligibledJobDetails['JobId'] ?>&& job-title=<?php echo $eligibledJobDetails['JobTitle']; ?>"><?php echo $eligibledJobDetails['JobTitle'] ?></a></li>
+                        <?php        
+                            }
+                        ?>
+                    </ul>
+                </li>

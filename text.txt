@@ -1,0 +1,36 @@
+
+<br>
+
+                            <div class="reply-form" id="">
+                                <?php
+                                    if($message['SeenStatus'] == "not seen"){?>
+                                        <div class="card-text">
+                                            <h3 class="text-info">This message not seen by any Admin.</h3>
+                                        </div>
+                                <?php
+                                    }else{?>
+                                        <div style="margin-bottom: 15px;">
+                                            <a href="javascript:void(0)" data-id="<?php echo $message['CompanyRepliesUniqueNumber']; ?>" class="showReplyFormBtn btn btn-dark">Reply</span></a>
+                                        </div>
+                                        <form action="" method="post" class="form-data" id="<?php echo $message['CompanyRepliesUniqueNumber']; ?>">
+                                            <div class="form-row">
+                                                <div class="col-md-12">
+                                                    <label for=""><b class="text-primary">Reply</b><span class="replyCancel"style="float: right">&times;</span></label>
+                                                    <textarea name="UserReply" id="userReplyId" cols="5" rows="5" class="form-control"></textarea>
+                                                    <div><b class="text-danger" id="userReplyErrorId"></b></div>
+                                                </div>
+                                            </div>
+
+                                            <br>
+                                            <div class="form-row">
+                                                <div class="col-md-12">
+                                                    <input type="submit" id="replyBtnId" value="Reply" class="btn btn-success">
+                                                </div>
+                                            </div>
+                                        </form>
+                                <?php
+                                    }
+                                ?>
+
+                                
+                            </div>
